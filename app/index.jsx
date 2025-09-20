@@ -1,8 +1,10 @@
+import { useRouter } from "expo-router";
 import { Dimensions, Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 import Button from "../components/Button";
 import Colors from "../components/Colors";
 
 export default function Index() {
+  const router = useRouter();
   return (
     <ImageBackground
       source={require("../assets/images/bg.jpg")}
@@ -21,7 +23,7 @@ export default function Index() {
 
       <View style={styles.btn}>
         <Button title={'Get Started'}
-          onPress={() => console.log('btn click')} />
+          onPress={() => router.push('/auth/SignIn')} />
       </View>
     </ImageBackground>
   );
